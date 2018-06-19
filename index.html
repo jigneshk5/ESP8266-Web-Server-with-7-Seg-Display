@@ -1,0 +1,26 @@
+
+<!-It is the root html page called by the ESP8266 SERVER for its GET request->
+<!DOCTYPE HTML>
+<html>
+    <head>
+    </head>
+    <body>
+	    <canvas id = "mycanvas" width = "800" height = "500" style="border:1px solid #FF0000;"></canvas>
+    	<form id="form1" action="http://192.168.43.185/submit" method="POST">
+	    Enter a digit to Display: <input type="text" placeholder="Digit between 0&9" name="nam" required/>
+	    <input type="submit" name="sub" onclick="display(this.form)"/>
+	    </form>
+	    <script type = "text/javascript" src="main.js"></script>
+        <script>
+            var x=document.getElementById('form1').elements["nam"];
+            drawSeg();                                               
+            function display(form){
+            var num=parseInt(x.value);
+            n=num;
+            common(n);                             //Common javascript code from bothe html files are enclosed her
+            localStorage.clear();                  //Clearing the previous value from web storage of browser
+            localStorage.setItem("value",num)      //localStorage object is used for storing num to web storage
+            }
+	</script>
+   </body>
+</html>
