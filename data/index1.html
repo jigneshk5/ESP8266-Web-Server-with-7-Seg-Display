@@ -1,0 +1,20 @@
+<!-It is the html page sent by the Server after the form input is received->
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Local Storage page</title>
+  </head>
+  <body>
+    <canvas id = "mycanvas" width = "800" height = "500" style="border:1px solid #FF0000;"></canvas> 
+    <script type = "text/javascript" src="main.js"></script>
+    <script>
+      var num=localStorage.value;          //Receving the 'num' value from web stroge of browser
+      drawSeg();                           //It will go to "main.js" by calling drawSeg()
+      display(num);
+      function display(num){
+      var n=num;
+      common(n);                          //Common javascript code from bothe html files are enclosed here
+      }
+    </script>
+  </body> 
+</html>
